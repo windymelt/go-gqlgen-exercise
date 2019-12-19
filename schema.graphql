@@ -1,0 +1,17 @@
+type Sixsixsix {
+  id: ID!
+  text: String!
+}
+
+type Query {
+  ssss: [Sixsixsix!]!
+}
+
+input NewSixsixsix {
+  id: ID!
+  text: String!
+}
+
+type Mutation {
+  create666(input: NewSixsixsix!): Sixsixsix!
+}

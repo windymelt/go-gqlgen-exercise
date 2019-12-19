@@ -27,7 +27,7 @@ tidy-modules:
 
 .PHONY: build
 build: setup
-	go build -o $(BIN_PATH) -a -tags netgo -installsuffix netgo --ldflags '-extldflags "-static"' ./exercise/
+	go build -o $(BIN_PATH) -a -tags netgo -installsuffix netgo --ldflags '-extldflags "-static"' ./
 
 .PHONY: run
 run: build
@@ -44,3 +44,7 @@ clean:
 .PHONY: goimports
 goimports: setup-goimports
 	$(GOBIN)/goimports -w .
+
+.PHONY: gqlgen
+gqlgen:
+	go run github.com/99designs/gqlgen -v
