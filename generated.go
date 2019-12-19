@@ -183,7 +183,6 @@ type Query {
 }
 
 input NewSixsixsix {
-  id: ID!
   text: String!
 }
 
@@ -1648,12 +1647,6 @@ func (ec *executionContext) unmarshalInputNewSixsixsix(ctx context.Context, obj 
 
 	for k, v := range asMap {
 		switch k {
-		case "id":
-			var err error
-			it.ID, err = ec.unmarshalNID2string(ctx, v)
-			if err != nil {
-				return it, err
-			}
 		case "text":
 			var err error
 			it.Text, err = ec.unmarshalNString2string(ctx, v)
